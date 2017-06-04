@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>new article | Blake&#39;s Blog</title>
+  <title>强化学习 | Blake&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -11,13 +11,13 @@
   
   <meta name="description" content="强化学习（Reinforcement learning）是机器学习中的一个领域，强调如何基于环境而行动，以取得最大化的预期利益。 背景其灵感来源于心理学中的行为主义理论，即有机体如何在环境给予的奖励或惩罚的刺激下，逐步形成对刺激的预期，产生能获得最大利益的习惯性行为。这个方法具有普适性，因此在其他许多领域都有研究，例如博弈论、控制论、运筹学、信息论、模拟优化方法、多主体系统学习、群体智能、统计学以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="new article">
-<meta property="og:url" content="http://yoursite.com/2017/06/04/new-article/index.html">
+<meta property="og:title" content="强化学习">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/强化学习/index.html">
 <meta property="og:site_name" content="Blake&#39;s Blog">
 <meta property="og:description" content="强化学习（Reinforcement learning）是机器学习中的一个领域，强调如何基于环境而行动，以取得最大化的预期利益。 背景其灵感来源于心理学中的行为主义理论，即有机体如何在环境给予的奖励或惩罚的刺激下，逐步形成对刺激的预期，产生能获得最大利益的习惯性行为。这个方法具有普适性，因此在其他许多领域都有研究，例如博弈论、控制论、运筹学、信息论、模拟优化方法、多主体系统学习、群体智能、统计学以">
-<meta property="og:updated_time" content="2017-06-04T15:23:20.716Z">
+<meta property="og:updated_time" content="2017-06-04T15:51:33.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="new article">
+<meta name="twitter:title" content="强化学习">
 <meta name="twitter:description" content="强化学习（Reinforcement learning）是机器学习中的一个领域，强调如何基于环境而行动，以取得最大化的预期利益。 背景其灵感来源于心理学中的行为主义理论，即有机体如何在环境给予的奖励或惩罚的刺激下，逐步形成对刺激的预期，产生能获得最大利益的习惯性行为。这个方法具有普适性，因此在其他许多领域都有研究，例如博弈论、控制论、运筹学、信息论、模拟优化方法、多主体系统学习、群体智能、统计学以">
   
     <link rel="alternate" href="/atom.xml" title="Blake&#39;s Blog" type="application/atom+xml">
@@ -105,7 +105,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-new-article" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-强化学习" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -113,7 +113,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      new article
+      强化学习
     </h1>
   
 
@@ -121,7 +121,7 @@
     
     <div class="article-meta">
       
-	<a href="/2017/06/04/new-article/" class="article-date">
+	<a href="/2017/06/04/强化学习/" class="article-date">
 	  <time datetime="2017-06-04T15:21:53.000Z" itemprop="datePublished">June 4, 2017</time>
 	</a>
 
@@ -139,7 +139,17 @@
 <p><strong>原理</strong><br>强化学习是一个序列决策（Sequential Decision Making）问题，它需要连续选择一些行为，从这些行为完成后得到最大的收益作为最好的结果。它在没有任何label告诉算法应该怎么做的情况下，通过先尝试做出一些行为——然后得到一个结果，通过判断这个结果是对还是错来对之前的行为进行反馈。由这个反馈来调整之前的行为，通过不断的调整，算法能够学习到在什么样的情况下选择什么样的行为可以得到最好的结果。<br>强化学习与监督学习有着不少区别，从前文中可以看到<em>监督学习是有一个label的</em>，这个label告诉算法什么样的输入对应着什么样的输出，而强化学习没有label告诉它在某种情况下应该做出什么样的行为，只有一个做出一系列行为后最终反馈回来的reward signal，这个signal能判断当前选择的行为是好是坏。其次<em>强化学习的结果反馈有延时</em>，有时候可能需要走了很多步以后才知道以前的某一步的选择是好还是坏，而监督学习做了比较坏的选择会立刻反馈给算法。强化学习面对的输入总是在变化，输入不像监督学习是独立同分布的。而每当算法做出一个行为，它就影响了下一次决策的输入。强化学习和标准的监督式学习之间的区别在于，它并不需要出现正确的输入/输出对，也不需要精确校正次优化的行为。强化学习更加专注于在线规划，需要在探索（在未知的领域）和遵从（现有知识）之间找到平衡。</p>
 <p><strong>实现过程</strong><br>强化学习决策实现过程需要构造出一个agent(图中的大脑部分)，agent能够执行某个action（例如决定围棋棋子下在哪个位置，机器人的下一步该怎么走）。Agent能够接收当前环境的一个observation（观察），例如当前机器人的摄像头拍摄到场景。Agent还能接收当它执行某个action后的reward，即在第t步agent的工作流程是执行一个动作AtAt，获得该动作之后的环境观测状况OtOt，以及获得这个动作的反馈奖赏RtRt。而环境environment则是agent交互的对象，它是一个行为不可控制的对象，agent一开始不知道环境会对不同action做出什么样的反应，而环境会通过observation告诉agent当前的环境状态，同时环境能够根据可能的最终结果反馈给agent一个reward，例如围棋棋面就是一个environment，它可以根据当前的棋面状况估计一下黑白双方输赢的比例。因而在第t步，environment的工作流程是接收一个AtAt，对这个动作做出反应之后传递环境状况和评估的reward给agent。reward奖赏RtRt，是一个反馈标量值，它表明了在第t步agent做出的决策有多好或者有多不好，整个强化学习优化的目标就是最大化累积reward。<br>例如在射击游戏中，击中敌方的一架飞机，最后的得分会增加，那么这一步的reward就是正值。</p>
 <p>在机器学习问题中，环境通常被规范为马可夫决策过程（MDP），所以许多强化学习算法在这种情况下使用动态规划技巧。传统的技术和强化学习算法的主要区别是，后者不需要关于MDP的知识，而且针对无法找到确切方法的大规模MDP。</p>
-<p>基本的强化学习模型包括：<br>\1. 环境状态的集合 S<br>\2. 动作的集合 A<br>\3. 在状态之间转换的规则<br>\4. 规定转换后“即时奖励”的规则<br>\5. 描述主体能够观察到什么的规则。<br>规则通常是随机的。主体通常可以观察即时奖励和最后一次转换。在许多模型中，主体被假设为可以观察现有的环境状态，这种情况称为“完全可观测”（full observability），反之则称为“部分可观测”（partial observability）。有时，主体被允许的动作是有限的（例如，你使用的钱不能多于你所拥有的）。</p>
+<p>基本的强化学习模型包括： </p>
+<blockquote>
+<ol>
+<li>环境状态的集合 S </li>
+<li>动作的集合 A </li>
+<li>在状态之间转换的规则 </li>
+<li>规定转换后“即时奖励”的规则 </li>
+<li>描述主体能够观察到什么的规则。 </li>
+</ol>
+</blockquote>
+<p>规则通常是随机的。主体通常可以观察即时奖励和最后一次转换。在许多模型中，主体被假设为可以观察现有的环境状态，这种情况称为“完全可观测”（full observability），反之则称为“部分可观测”（partial observability）。有时，主体被允许的动作是有限的（例如，你使用的钱不能多于你所拥有的）。</p>
 <p>强化学习主体的目标，是得到尽可能多的奖励。主体选择的动作是其历史的函数，它也可以选择随机的动作。</p>
 <p>强化学习的强大能来源于两个方面：<br>- 使用样本来优化行为<br>- 使用函数近似来描述复杂的环境</p>
 <p>模型的环境未知，且解析解不存在；<br>仅仅给出环境的模拟模型（模拟优化方法的问题）<br>从环境中获取信息的唯一办法是和它互动。前两个问题可以被考虑为规划问题，而最后一个问题可以被认为是genuine learning问题。使用强化学习的方法，这两种规划问题都可以被转化为机器学习问题。</p>
@@ -149,31 +159,6 @@
     <footer class="entry-meta entry-footer">
       
       
-      
-        
-	<div id="comment">
-	
-	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/2017/06/04/new-article/" data-title="new article" data-url="http://yoursite.com/2017/06/04/new-article/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"iTimeTraveler"};
-	  (function() {
-	    var ds = document.createElement('script');
-	    ds.type = 'text/javascript';ds.async = true;
-	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	    ds.charset = 'UTF-8';
-	    (document.getElementsByTagName('head')[0] 
-	     || document.getElementsByTagName('body')[0]).appendChild(ds);
-	  })();
-	  </script>
-	<!-- 多说公共JS代码 end -->
-	
-	</div>
-	<link rel="stylesheet" href="/css/comment.css">
-
-
       
     </footer>
     <hr class="entry-footer-hr">
